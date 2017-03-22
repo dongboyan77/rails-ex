@@ -20,7 +20,7 @@ check_number PUMA_MAX_THREADS "${PUMA_MAX_THREADS:-0}"
 export RACK_ENV=${RACK_ENV:-"production"}
 
 if is_puma_installed; then
-  export_vars=$(cgroup-limits) ; export $export_vars
+#  export_vars=$(cgroup-limits) ; export $export_vars
 
   exec bundle exec "puma --config ../etc/puma.cfg"
 else
